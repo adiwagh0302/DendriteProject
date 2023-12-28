@@ -1,0 +1,18 @@
+type Query {
+  todos: [Todo!]!
+}
+
+type Mutation {
+  createTodo(title: String!, description: String!, image: Image): Todo!
+  updateTodo(id: ID!, title: String, description: String, image: Image): Todo!
+  deleteTodo(id: ID!): Boolean!
+}
+
+type Todo {
+  id: ID!
+  title: String!
+  description: String!
+  image: Image
+}
+
+scalar Image
